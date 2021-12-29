@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <v-app id="app">
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <router-view />
-  </div>
+  </v-app>
 </template>
 <script>
 export default {
@@ -19,8 +22,7 @@ export default {
 }
 html {
   margin: 0;
-  background-color: #17182f;
-  overflow-y: auto !important
+  overflow-y: auto !important;
 }
 canvas {
   display: block;
