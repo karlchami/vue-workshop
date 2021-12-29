@@ -2,13 +2,21 @@
 body {
   background: #111;
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 .hidden {
   opacity: 0;
 }
 .console-container {
   font-family: Khula;
-  font-size: 4em;
-  color: rgb(0, 0, 0);
+  font-size: 2.5em;
+  color: rgb(255, 255, 255);
 }
 .console-underscore {
   display: inline-block;
@@ -17,6 +25,11 @@ body {
   left: 10px;
 }
 .main-container {
-  background-image: linear-gradient(to bottom right, red, yellow);
+  background-image: linear-gradient(to bottom, #35916c, #223c5c);
   height: 100vh;
+}
+.btn-cls {
+  font-size: 2em !important;
+  background-color: #e1e1e1 !important;
+  color: black !important;
 }
