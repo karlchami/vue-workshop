@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mt-5 ml-5">
+  <v-container class="mt-5 ml-5 mb-2">
     <h1>Welcome to <i class="workshop-title">Vue.js</strong> Workshop</i></h1>
     <div class="mt-1">
       The goal of this workshop is to demonstrate the main concepts behind this framework.<br><br>

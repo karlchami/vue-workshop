@@ -65,7 +65,7 @@
               <v-card
                 id="watch-scroll"
                 @scroll="scrollActions"
-                height="700"
+                height="710"
                 class="main-card no-select"
               >
                 <transition :name="pageTransition">
@@ -111,8 +111,8 @@ export default {
   components: { MainPage, IntroPage, whatIs, componentStructure },
   data () {
     return {
-      showMain: true,
-      showMenu: false,
+      showMain: false,
+      showMenu: true,
       pageValue: 0,
       menuButtonsDisabled: [true, false, false],
       pageIndex: 0,
