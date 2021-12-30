@@ -39,7 +39,7 @@
                 <div
                   v-show="showMenu"
                   align="center"
-                  class="mb-3"
+                  class="pageButtons mb-3"
                 >
                   <v-btn
                     v-ripple="false"
@@ -82,6 +82,7 @@
               >
                 <div
                   class="m-5"
+                  align="center"
                   v-for="x in 50"
                 >Content Here</div>
               </v-card>
@@ -104,6 +105,8 @@
 
 <script>
 require('@/css/mainPage.css')
+require('@/css/transitions.css')
+require('@/css/mobile.css')
 import MainPage from "@/components/mainPage.vue"
 import { pSBC } from "@/helpers/shader"
 export default {
