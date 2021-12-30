@@ -35,10 +35,17 @@ body {
   border-radius: 0 0 25px 25px !important;
   box-shadow: none !important;
   color: white !important;
+  overflow-x: auto !important;
 }
 .card-container {
-  max-width: 1300px !important;
+  max-width: 1500px !important;
 }
 .layout-parent {
-  max-width: 1500px !important;
+  max-width: 1600px !important;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+.custom-click {
+  outline: none !important;
 }

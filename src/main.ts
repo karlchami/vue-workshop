@@ -10,6 +10,7 @@ import ScrollAnimationLeft from "./directives/scrollanimationleft.js"
 import ScrollDisappear from "./directives/scrolldisappear.js"
 import ScrollRotate from "./directives/scrollrotate.js"
 import vuetify from '@/plugins/vuetify'
+import '@mdi/font/css/materialdesignicons.css'
 
 Vue.directive('scrollanimation', ScrollAnimation);
 Vue.directive('scrollanimationleft', ScrollAnimationLeft);
