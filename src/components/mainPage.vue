@@ -1,42 +1,45 @@
 <template>
-  <v-container
-    fluid
-    class="main-container container-height"
-  >
-    <v-layout fill-height>
-      <v-container>
-        <div align="center">
-          <img
-            class="mt-12 mb-12"
-            width="300"
-            src="@/img/vue-logo.svg"
-          ></img>
-          <div class='console-container mt-10 mb-12'><span id='text'></span>
-            <div
-              class='console-underscore'
-              id='console'
-            >&#95;</div>
-          </div>
-          <ParticleEffectButton
-            :visible.sync="btnOps.visible"
-            :animating.sync="btnOps.animating"
-            :options="btnOps"
-            cls="btn-cls mt-12"
-          >
-            Let's get started!
-          </ParticleEffectButton>
-          <button @click="btnOps.visible=!btnOps.visible"></button>
+  <v-container>
+    <div align="center">
+      <transition name="slide-fade">
+        <img
+          v-show="!exit"
+          class="mt-12 mb-12"
+          width="300"
+          src="@/img/vue-logo.svg"
+        ></img>
+      </transition>
+      <transition name="slide-left-fade">
+        <div
+          v-show="!exit"
+          class='console-container mt-10 mb-12'
+        ><span id='text'></span>
+          <div
+            class='console-underscore'
+            id='console'
+          >&#95;</div>
         </div>
-        </div>
-      </v-container>
-    </v-layout>
+      </transition>
+      <ParticleEffectButton
+        :visible.sync="btnOps.visible"
+        :animating.sync="btnOps.animating"
+        :options="btnOps"
+        cls="btn-cls mt-12"
+      >
+        Let's get started!
+      </ParticleEffectButton>
+      <button @click="btnOps.visible=!btnOps.visible"></button>
+    </div>
+    </div>
   </v-container>
+  </v-layout>
 </template>
 
 <script>
 import ParticleEffectButton from "vue-particle-effect-buttons"
 import consoleText from "@/helpers/consoleText"
 require('@/css/mainPage.css')
+require('@/css/transitions.css')
 export default {
   name: "Base",
   components: { ParticleEffectButton },
@@ -57,6 +60,7 @@ export default {
           return Math.random() < 0.5 ? "#2F7968" : "#ffffff";
         },
         onComplete: () => {
+          this.exit = true
           this.$emit('start', 'true')
         },
         onBegin: () => {
@@ -64,6 +68,7 @@ export default {
         visible: true,
         animating: false
       },
+      exit: false,
     }
   },
   mounted () {

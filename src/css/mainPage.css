@@ -5,38 +5,6 @@ html {
 body {
   background: #111;
 }
-.fade-enter-active {
-  transition: opacity 3s;
-}
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.slower-fade-enter-active,
-.slower-fade-leave-active {
-  transition: opacity 6s;
-}
-.slower-fade-enter,
-.slower-fade-leave-to {
-  opacity: 0;
-}
-.hidden {
-  opacity: 0;
-}
-.slide-fade-enter-active {
-  transition: all 8s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
 .console-container {
   font-family: Khula;
   font-size: 2.5em;

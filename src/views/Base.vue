@@ -1,56 +1,56 @@
 <template>
-  <div>
-    <transition
-      name="fade"
-      appear
-    >
-      <MainPage
-        v-show="showMain"
-        @start="getStarted"
-      ></MainPage>
-    </transition>
-    <transition name="slower-fade">
-      <v-container
-        v-show="!showMain"
-        fluid
-        class="container-height menu-container"
+  <v-container
+    fluid
+    class="main-container container-height"
+  >
+    <v-layout fill-height>
+      <transition
+        name="fade"
+        appear
       >
-        <transition name="slide-fade">
+        <MainPage
+          v-show="showMain"
+          @start="getStarted"
+        ></MainPage>
+      </transition>
+      <transition name="slide-down-fade">
+        <v-layout
+          v-show="showMenu"
+          align-center
+          justify-center
+        >
           <v-layout
-            v-show="!showMain"
-            fill-height
+            align-center
+            justify-center
+            class="layout-parent"
           >
-            <v-layout
-              align-center
-              justify-center
-            >
-              <v-layout
-                align-center
-                justify-center
-                class="layout-parent"
+            <transition name="slide-left-fade">
+              <v-btn v-show="showMenu">left</v-btn>
+            </transition>
+            <v-container class="align-center card-container">
+              <transition name="slide-up-fade">
+                <v-progress-linear
+                  v-show="showMenu"
+                  color="rgba(0, 0, 0, 0.303)"
+                  height="15"
+                  :value="pageValue"
+                ></v-progress-linear>
+              </transition>
+              <v-card
+                height="600"
+                class="d-flex align-center justify-center main-card"
               >
-                <v-btn>left</v-btn>
-                <v-container class="align-center card-container">
-                  <v-progress-linear
-                    color="rgba(0, 0, 0, 0.303)"
-                    height="10"
-                    value="15"
-                  ></v-progress-linear>
-                  <v-card
-                    height="600"
-                    class="d-flex align-center justify-center main-card"
-                  >
-                    dfdsfsfsdfsdfs
-                  </v-card>
-                </v-container>
-                <v-btn>right</v-btn>
-              </v-layout>
-            </v-layout>
+                dfdsfsfsdfsdfs
+              </v-card>
+            </v-container>
+            <transition name="slide-right-fade">
+              <v-btn v-show="showMenu">right</v-btn>
+            </transition>
           </v-layout>
-        </transition>
-      </v-container>
-    </transition>
-  </div>
+        </v-layout>
+      </transition>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -61,24 +61,29 @@ export default {
   components: { MainPage },
   data () {
     return {
-      showMain: false,
+      showMain: true,
+      showMenu: false,
+      showMenuButton: false,
     }
   },
   mounted () {
   },
   computed: {
+    pageValue () {
+      return 0
+    }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
   },
   destroyed () {
   },
   methods: {
     getStarted () {
       this.showMain = false
+      setTimeout(this.activateMenu, 1200);
     },
-    handleScroll () {
-      console.log("hiiii")
+    activateMenu () {
+      this.showMenu = true
     }
   }
 };
