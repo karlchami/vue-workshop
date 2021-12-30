@@ -1,16 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=Khula:700);
+html {
+  overflow: hidden !important;
+}
 body {
   background: #111;
 }
-.fade-enter-active,
+.fade-enter-active {
+  transition: opacity 3s;
+}
 .fade-leave-active {
-  transition: opacity 2s;
+  transition: opacity 0.5s;
 }
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
 }
+.slower-fade-enter-active,
+.slower-fade-leave-active {
+  transition: opacity 6s;
+}
+.slower-fade-enter,
+.slower-fade-leave-to {
+  opacity: 0;
+}
 .hidden {
+  opacity: 0;
+}
+.slide-fade-enter-active {
+  transition: all 8s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
   opacity: 0;
 }
 .console-container {
@@ -24,12 +48,29 @@ body {
   top: -0.14em;
   left: 10px;
 }
+.container-height {
+  height: 100vh;
+}
 .main-container {
   background-image: linear-gradient(to bottom, #35916c, #223c5c);
-  height: 100vh;
+}
+.menu-container {
+  background-image: linear-gradient(to top, #35916c, #223c5c);
 }
 .btn-cls {
   font-size: 2em !important;
   background-color: #e1e1e1 !important;
   color: black !important;
+}
+.main-card {
+  background-color: rgba(0, 0, 0, 0.303) !important;
+  border-radius: 0 0 25px 25px !important;
+  box-shadow: none !important;
+  color: white !important;
+}
+.card-container {
+  max-width: 1300px !important;
+}
+.layout-parent {
+  max-width: 1500px !important;
 }
