@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680.3 173.9"
+	 style="enable-background:new 0 0 680.3 173.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#View_rectangle_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'Calibri';}
+	.st3{font-size:24px;}
+	.st4{fill:url(#ViewModel_rectangle_1_);}
+	.st5{fill:url(#Model_rectangle_1_);}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#2E5F9C;stroke:#2E5F9C;stroke-width:3;}
+	.st7{fill:none;stroke:#2E5F9C;stroke-width:3;stroke-linecap:round;}
+	.st8{fill:none;stroke:#2E5F9C;stroke-width:3;stroke-linecap:round;stroke-dasharray:3,6;}
+	.st9{font-family:'Calibri-Bold';}
+	.st10{font-size:12px;}
+</style>
+<linearGradient id="View_rectangle_1_" gradientUnits="userSpaceOnUse" x1="64.2988" y1="810.296" x2="64.2988" y2="654.3905" gradientTransform="matrix(1 0 0 1 20.6929 -654.3905)">
+	<stop  offset="0" style="stop-color:#2E5F9C"/>
+	<stop  offset="1" style="stop-color:#407ABE"/>
+</linearGradient>
+<path id="View_rectangle" class="st0" d="M142.8,155.9H27.1l0,0c-15,0-27.1-11.8-27.1-26.1l0,0V26.1l0,0C0,11.7,12.3,0,27.1,0l0,0
+	h115.7l0,0c15,0,27.1,11.8,27.1,26.1l0,0v103.6l0,0C170.1,144.1,157.8,155.9,142.8,155.9L142.8,155.9L142.8,155.9"/>
+<text id="View" transform="matrix(1 0 0 1 60.9388 83.9936)" class="st1 st2 st3">View</text>
+<linearGradient id="ViewModel_rectangle_1_" gradientUnits="userSpaceOnUse" x1="64.3465" y1="654.3905" x2="64.3465" y2="810.296" gradientTransform="matrix(1 0 0 1 275.811 -654.3905)">
+	<stop  offset="0" style="stop-color:#36B3D5"/>
+	<stop  offset="1" style="stop-color:#2B768A"/>
+</linearGradient>
+<path id="ViewModel_rectangle" class="st4" d="M398,155.9H282.3l0,0c-15,0-27.2-11.8-27.2-26.1l0,0V26.1l0,0
+	c0-14.4,12.3-26.1,27.2-26.1l0,0H398l0,0c15,0,27.2,11.8,27.2,26.1l0,0v103.6l0,0C425.2,144.1,412.9,155.9,398,155.9L398,155.9
+	L398,155.9"/>
+<text id="ViewModel" transform="matrix(1 0 0 1 293.0601 83.9937)" class="st1 st2 st3">Presenter</text>
+<linearGradient id="Model_rectangle_1_" gradientUnits="userSpaceOnUse" x1="64.3465" y1="654.3905" x2="64.3465" y2="810.296" gradientTransform="matrix(1 0 0 1 530.9291 -654.3905)">
+	<stop  offset="0" style="stop-color:#F28E32"/>
+	<stop  offset="1" style="stop-color:#D1640C"/>
+</linearGradient>
+<path id="Model_rectangle" class="st5" d="M653.2,155.9H537.4l0,0c-15,0-27.2-11.8-27.2-26.1l0,0V26.1l0,0
+	c0-14.4,12.3-26.1,27.2-26.1l0,0h115.8l0,0c15,0,27.2,11.8,27.2,26.1l0,0v103.6l0,0C680.3,144.1,668.1,155.9,653.2,155.9
+	L653.2,155.9L653.2,155.9"/>
+<text transform="matrix(1 0 0 1 563.6585 83.9936)" class="st1 st2 st3">Model</text>
+<g transform="matrix(-1,0,0,-1,264.0566,106.2992)">
+	<title></title>
+	<path class="st6" d="M28.5,31.2L23,28.3l5.5-2.9V31.2z"/>
+	<path class="st6" d="M72.4,31.2l5.5-2.9l-5.5-2.9V31.2z"/>
+	<path class="st7" d="M23.6,28.3h53.8"/>
+</g>
+<g transform="matrix(-1,0,0,-1,519.5906,141.7323)">
+	<title></title>
+	<path class="st6" d="M28.5,102.1L23,99.2l5.5-2.9V102.1z"/>
+	<path class="st7" d="M23.6,99.2h56.6"/>
+</g>
+<g transform="matrix(1,0,0,1,460.063,70.86614)">
+	<title></title>
+	<path class="st6" d="M-12.9,45.4l-5.5-2.9l5.5-2.9V45.4z"/>
+	<path class="st8" d="M-17.8,42.5h56.6"/>
+</g>
+<text transform="matrix(1 0 0 1 539.345 169.5055)" class="st9 st10">BusinessLogicAndData</text>
+<text transform="matrix(1 0 0 1 181.9978 95.8047)" class="st9 st10">DataBinding</text>
+<text transform="matrix(1 0 0 1 123.4944 169.5055)" class="st9 st10">Presentation and Presentation Logic</text>
+</svg>

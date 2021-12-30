@@ -111,8 +111,8 @@ export default {
   components: { MainPage, IntroPage, whatIs, componentStructure },
   data () {
     return {
-      showMain: false,
-      showMenu: true,
+      showMain: true,
+      showMenu: false,
       pageValue: 0,
       menuButtonsDisabled: [true, false, false],
       pageIndex: 0,
@@ -205,10 +205,4 @@ export default {
 </script>
 
 <style scoped>
-#division,
-.division {
-  background: blue;
-  margin: 50px;
-  margin-top: 200px;
-}
 </style>
