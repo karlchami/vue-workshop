@@ -111,8 +111,8 @@ export default {
   components: { MainPage, IntroPage, whatIs, componentStructure },
   data () {
     return {
-      showMain: false,
-      showMenu: true,
+      showMain: true,
+      showMenu: false,
       pageValue: 0,
       menuButtonsDisabled: [true, false, false],
       pageIndex: 0,
@@ -183,6 +183,7 @@ export default {
       let div = document.getElementById("watch-scroll")
       let totalScroll = div.scrollHeight
       let scrolledTop = div.scrollTop + div.clientHeight
+      console.log(scrolledTop / totalScroll)
       return scrolledTop / totalScroll
     },
     scrollActions () {
