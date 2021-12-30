@@ -74,3 +74,31 @@
   transform: translateY(-200px);
   opacity: 0;
 }
+.slide-custom-l-fade-enter-active {
+  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-custom-l-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-custom-l-fade-enter {
+  transform: translateX(500px);
+  opacity: 0;
+}
+.slide-custom-l-fade-leave-to {
+  transform: translateX(-500px);
+  opacity: 0;
+}
+.slide-custom-r-fade-enter-active {
+  transition: all 0.75s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-custom-r-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-custom-r-fade-enter {
+  transform: translateX(-500px);
+  opacity: 0;
+}
+.slide-custom-r-fade-leave-to {
+  transform: translateX(500px);
+  opacity: 0;
+}

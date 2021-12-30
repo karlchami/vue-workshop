@@ -27,8 +27,10 @@
           >
             <transition name="slide-left-fade">
               <v-btn
+                :disabled="disabledLeft"
                 v-show="showMenu"
                 class="custom-click"
+                @click="setPageIndex(-1)"
                 icon
               >
                 <v-icon size="50">mdi-chevron-left-circle</v-icon>
@@ -42,28 +44,14 @@
                   class="pageButtons mb-3"
                 >
                   <v-btn
+                    v-for="(b, index) in menuButtons"
+                    :key="b.label"
                     v-ripple="false"
                     color="rgba(0, 0, 0, 0.303)"
+                    :disabled="b.disabled"
+                    @click="clickMenuButton(index)"
                     class="white--text custom-click ml-1 mr-1"
-                  >Page 1</v-btn>
-                  <v-btn
-                    v-ripple="false"
-                    color="rgba(0, 0, 0, 0.303)"
-                    :disabled="true"
-                    class="white--text custom-click ml-1 mr-1"
-                  >Page 2</v-btn>
-                  <v-btn
-                    v-ripple="false"
-                    color="rgba(0, 0, 0, 0.303)"
-                    :disabled="true"
-                    class="white--text custom-click ml-1 mr-1"
-                  >Page 3</v-btn>
-                  <v-btn
-                    v-ripple="false"
-                    color="rgba(0, 0, 0, 0.303)"
-                    :disabled="true"
-                    class="white--text custom-click ml-1 mr-1"
-                  >Page 4</v-btn>
+                  >{{ b.label }}</v-btn>
                 </div>
               </transition>
               <transition name="slide-up-fade">
@@ -78,18 +66,24 @@
                 id="watch-scroll"
                 @scroll="scrollActions"
                 height="700"
-                class="main-card"
+                class="main-card no-select"
               >
-                <div
-                  class="m-5"
-                  align="center"
-                  v-for="x in 50"
-                >Content Here</div>
+                <transition :name="pageTransition">
+                  <IntroPage v-show="menuButtonsDisabled[0]" />
+                </transition>
+                <transition :name="pageTransition">
+                  <whatIs v-show="menuButtonsDisabled[1]" />
+                </transition>
+                <transition :name="pageTransition">
+                  <component-structure v-show="menuButtonsDisabled[2]" />
+                </transition>
               </v-card>
             </v-container>
             <transition name="slide-right-fade">
               <v-btn
                 v-show="showMenu"
+                :disabled="disabledRight"
+                @click="setPageIndex(1)"
                 class="custom-click"
                 icon
               >
@@ -108,24 +102,65 @@ require('@/css/mainPage.css')
 require('@/css/transitions.css')
 require('@/css/mobile.css')
 import MainPage from "@/components/mainPage.vue"
+import IntroPage from "@/components/introPage.vue"
+import whatIs from "@/components/whatIs.vue"
+import componentStructure from "@/components/componentStructure.vue"
 import { pSBC } from "@/helpers/shader"
 export default {
   name: "Base",
-  components: { MainPage },
+  components: { MainPage, IntroPage, whatIs, componentStructure },
   data () {
     return {
-      showMain: true,
-      showMenu: false,
-      pageValue: 0
+      showMain: false,
+      showMenu: true,
+      pageValue: 0,
+      menuButtonsDisabled: [true, false, false],
+      pageIndex: 0,
+      pageTransition: 'slide-custom-l-fade'
     }
   },
-  mounted () {
-  },
   computed: {
+    menuButtons: function () {
+      return {
+        0: {
+          label: "Table of Contents",
+          disabled: this.menuButtonsDisabled[0]
+        },
+        1: {
+          label: "Introduction",
+          disabled: this.menuButtonsDisabled[1]
+        },
+        2: {
+          label: "Component Structure",
+          disabled: this.menuButtonsDisabled[2]
+        }
+      }
+    },
+    disabledLeft () {
+      return this.pageIndex === 0
+    },
+    disabledRight () {
+      return this.pageIndex === this.menuButtonsDisabled.length - 1
+    },
   },
   created () {
   },
-  destroyed () {
+  watch: {
+    pageIndex: {
+      handler: function (newValue, oldValue) {
+        if (newValue > oldValue) {
+          this.pageTransition = 'slide-custom-l-fade'
+        }
+        else {
+          this.pageTransition = 'slide-custom-r-fade'
+        }
+        let newDisabled = this.menuButtonsDisabled.map((e, index) => {
+          return index === newValue
+        });
+        this.menuButtonsDisabled = newDisabled
+        document.getElementById("watch-scroll").scrollTop = 0
+      }
+    }
   },
   methods: {
     getStarted () {
@@ -157,6 +192,12 @@ export default {
       let color2 = pSBC(this.scrollLevelColor(), "#223c5c", "#35916c")
       let gradientBackground = `linear-gradient(to bottom, ${color1}, ${color2})`
       document.getElementById("main-background").style.backgroundImage = gradientBackground
+    },
+    clickMenuButton (index) {
+      this.pageIndex = parseInt(index)
+    },
+    setPageIndex (incrementOrDecrement) {
+      this.pageIndex += incrementOrDecrement
     }
   }
 };
