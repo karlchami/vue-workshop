@@ -101,7 +101,7 @@
         <div>
           <img
             class="mvvm"
-            src="@/img/mvvm.svg"
+            src="@/img/mvvm.png"
           ></img>
         </div>
       </v-col>
@@ -117,7 +117,7 @@ export default {
   components: {},
   data () {
     return {
-      pics: ['buzzfeed', 'gitlab', 'google', 'nitendo', 'ph', 'zoom']
+      pics: ['buzzfeed', 'gitlab', 'google', 'nitendo', 'fb', 'zoom']
     }
   },
   mounted () {
@@ -144,7 +144,7 @@ strong {
 .box {
   border-radius: 5px;
   width: 300px;
-  height: 150px;
+  height: auto;
   background: rgba(0, 0, 0, 0.084);
   white-space: pre-line;
   position: relative;
@@ -154,5 +154,7 @@ strong {
 }
 .mvvm {
   width: 600px;
+  image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
 }
 </style>

@@ -65,7 +65,7 @@
               <v-card
                 id="watch-scroll"
                 @scroll="scrollActions"
-                height="710"
+                height="720"
                 class="main-card no-select"
               >
                 <transition :name="pageTransition">
