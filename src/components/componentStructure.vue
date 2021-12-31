@@ -4,9 +4,9 @@
     <div class="ml-10 mt-5">
       <h2>What is a Vue.js component?</h2>
     </div>
-    <v-row class="mb-5">
+    <v-row>
       <v-col>
-        <div class="ml-12 mt-12">
+        <div class="ml-12 mt-12 bottom-marg">
           A single page is composed of one or more components.<br><br>
           Each component is a self-contained piece of user interface consisting of HTML elements, Javascript functionality, and CSS properties.
           <br><br>
@@ -96,5 +96,8 @@ strong {
 }
 .v-icon {
   color: white !important;
+}
+.bottom-marg {
+  margin-bottom: 200px !important;
 }
 </style>

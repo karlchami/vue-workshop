@@ -77,6 +77,9 @@
                 <transition :name="pageTransition">
                   <component-structure v-show="menuButtonsDisabled[2]" />
                 </transition>
+                <transition :name="pageTransition">
+                  <component-inside v-show="menuButtonsDisabled[3]" />
+                </transition>
               </v-card>
             </v-container>
             <transition name="slide-right-fade">
@@ -105,16 +108,17 @@ import MainPage from "@/components/mainPage.vue"
 import IntroPage from "@/components/introPage.vue"
 import whatIs from "@/components/whatIs.vue"
 import componentStructure from "@/components/componentStructure.vue"
+import componentInside from "@/components/componentInside.vue"
 import { pSBC } from "@/helpers/shader"
 export default {
   name: "Base",
-  components: { MainPage, IntroPage, whatIs, componentStructure },
+  components: { MainPage, IntroPage, whatIs, componentStructure, componentInside },
   data () {
     return {
       showMain: false,
       showMenu: true,
       pageValue: 0,
-      menuButtonsDisabled: [true, false, false],
+      menuButtonsDisabled: [true, false, false, false],
       pageIndex: 0,
       pageTransition: 'slide-custom-l-fade'
     }
@@ -133,6 +137,10 @@ export default {
         2: {
           label: "Component Structure",
           disabled: this.menuButtonsDisabled[2]
+        },
+        3: {
+          label: "Inside a Component",
+          disabled: this.menuButtonsDisabled[3]
         }
       }
     },
