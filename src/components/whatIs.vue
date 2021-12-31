@@ -130,7 +130,6 @@ export default {
   },
   methods: {
     getImageSrc (img) {
-      console.log(img)
       return require(`@/img/${img}.svg`)
     }
   }
@@ -148,6 +147,9 @@ strong {
   background: rgba(0, 0, 0, 0.084);
   white-space: pre-line;
   position: relative;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
 }
 .logos {
   width: 100px;

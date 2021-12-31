@@ -111,8 +111,8 @@ export default {
   components: { MainPage, IntroPage, whatIs, componentStructure },
   data () {
     return {
-      showMain: true,
-      showMenu: false,
+      showMain: false,
+      showMenu: true,
       pageValue: 0,
       menuButtonsDisabled: [true, false, false],
       pageIndex: 0,
@@ -179,18 +179,11 @@ export default {
       let scrolledTop = div.scrollTop + div.clientHeight
       return scrolledTop / totalScroll
     },
-    scrollLevelColor () {
-      let div = document.getElementById("watch-scroll")
-      let totalScroll = div.scrollHeight
-      let scrolledTop = div.scrollTop + div.clientHeight
-      console.log(scrolledTop / totalScroll)
-      return scrolledTop / totalScroll
-    },
     scrollActions () {
       let scrollLevel = this.scrollLevel()
       this.pageValue = scrollLevel * 100
-      let color1 = pSBC(this.scrollLevelColor(), "#35916c", "#223c5c")
-      let color2 = pSBC(this.scrollLevelColor(), "#223c5c", "#35916c")
+      let color1 = pSBC(this.scrollLevel(), "#35916c", "#223c5c")
+      let color2 = pSBC(this.scrollLevel(), "#223c5c", "#35916c")
       let gradientBackground = `linear-gradient(to bottom, ${color1}, ${color2})`
       document.getElementById("main-background").style.backgroundImage = gradientBackground
     },
